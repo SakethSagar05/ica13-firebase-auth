@@ -1,0 +1,23 @@
+Resolving dependencies...
+Downloading packages...
+  cupertino_icons 1.0.9 (2.0.0 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  meta 1.18.3 (1.19.0 available)
+  test_api 0.7.12 (0.7.15 available)
+  vector_math 2.4.0 (2.4.4 available)
+Got dependencies!
+5 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+00:00 +0: loading /Users/sakethsagar/MAD folder/ica13_firebase_auth/test/validators_test.dart
+00:00 +0: /Users/sakethsagar/MAD folder/ica13_firebase_auth/test/validators_test.dart: validateEmail rejects empty input
+00:00 +1: /Users/sakethsagar/MAD folder/ica13_firebase_auth/test/auth_error_messages_test.dart: sign-in failures share one privacy-aware message
+00:00 +2: /Users/sakethsagar/MAD folder/ica13_firebase_auth/test/validators_test.dart: validateEmail rejects badly formatted emails
+00:00 +3: /Users/sakethsagar/MAD folder/ica13_firebase_auth/test/validators_test.dart: validateEmail rejects badly formatted emails
+00:00 +4: /Users/sakethsagar/MAD folder/ica13_firebase_auth/test/auth_error_messages_test.dart: email-already-in-use points to sign-in / reset
+00:00 +5: /Users/sakethsagar/MAD folder/ica13_firebase_auth/test/validators_test.dart: validateEmail accepts a valid email (trims spaces)
+00:00 +6: /Users/sakethsagar/MAD folder/ica13_firebase_auth/test/auth_error_messages_test.dart: raw exception text is never shown
+00:00 +7: /Users/sakethsagar/MAD folder/ica13_firebase_auth/test/auth_error_messages_test.dart: raw exception text is never shown
+00:00 +8: /Users/sakethsagar/MAD folder/ica13_firebase_auth/test/validators_test.dart: validatePassword enforces the 6-character baseline
+00:00 +9: /Users/sakethsagar/MAD folder/ica13_firebase_auth/test/auth_error_messages_test.dart: missing user maps to a session message
+00:00 +10: /Users/sakethsagar/MAD folder/ica13_firebase_auth/test/validators_test.dart: validateConfirmPassword must match the original
+00:00 +11: All tests passed!
