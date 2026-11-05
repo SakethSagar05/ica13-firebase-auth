@@ -9,7 +9,4 @@ Got dependencies!
 5 packages have newer versions incompatible with dependency constraints.
 Try `flutter pub outdated` for more information.
 Analyzing ica13_firebase_auth...                                
-
-   info • Don't use 'BuildContext's across async gaps. Try rewriting the code to not use the 'BuildContext', or guard the use with a 'mounted' check • lib/screens/profile_screen.dart:97:18 • use_build_context_synchronously
-
-1 issue found. (ran in 3.1s)
+No issues found! (ran in 3.7s)

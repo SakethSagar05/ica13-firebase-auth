@@ -48,7 +48,8 @@ echo "ready $(date +%s)" > "$RELAY/status"
 
 num='^[0-9]+$'; safe_text='^[A-Za-z0-9@._+!-]+$'; safe_name='^[A-Za-z0-9_-]+$'
 while true; do
-  for f in $(ls "$REQ"/*.req 2>/dev/null | sort); do
+  shopt -s nullglob
+  for f in "$REQ"/*.req; do
     line="$(head -1 "$f" | tr -d '\r')"; rm -f "$f"
     set -- $line; cmd="${1:-}"; shift || true
     case "$cmd" in
@@ -64,6 +65,7 @@ while true; do
       net)   if [ "${1:-}" = off ]; then A shell svc wifi disable; A shell svc data disable; log "network OFF";
              elif [ "${1:-}" = on ]; then A shell svc wifi enable; A shell svc data enable; log "network ON"; fi;;
       info)  { echo "model=$(A shell getprop ro.product.model)"; echo "android=$(A shell getprop ro.build.version.release)"; echo "sdk=$(A shell getprop ro.build.version.sdk)"; echo "size=$(A shell wm size)"; } | tr -d '\r' > "$RELAY/info.txt"; log "info";;
+      finish) log "finish: analyze + commit + push"; flutter analyze > docs/analyze_output.txt 2>&1; git add -A; git commit -q -m "Add test screenshots and fix helper path quoting" -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>" -m "Claude-Session: https://claude.ai/code/session_016XgwNWg6JgUMZTbkZPK1v6"; git push -q 2>&1 | tee -a "$LOG"; log "pushed: $(git log --oneline -1)";;
       install) A install -r "$APK" | tail -1 | tee -a "$LOG"; launch;;
       *) log "ignored: $line";;
     esac
